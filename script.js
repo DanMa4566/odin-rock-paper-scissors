@@ -12,7 +12,8 @@ function getComputerMove() {
 
 function getUserMove() {
     userMove = prompt("Do you want to play a game of Rock, Paper, Scissors?... Yes?, That's the spirit, Now, Choose Rock, Paper or Scissors!");
-    userMove = userMove.trim(userMove.toLowerCase())
+    userMove = userMove.toLowerCase()
+    userMove = userMove.trim()
 
     if (userMove === "rock") {
         return userMove
@@ -38,11 +39,11 @@ function startGame() {
     console.log(`I chose ${cpuMove}`);
 
     if (playerMove === "rock" && cpuMove === "paper" || playerMove === "paper" && cpuMove === "scissors" || playerMove === "scissors" && cpuMove === "rock") {    
-        console.log(`${cpuMove} beats ${playerMove}, You Lost...`);
+        return `${cpuMove} beats ${playerMove}, You Lost...`
     } else if (playerMove === "rock" && cpuMove === "scissors" || playerMove === "paper" && cpuMove === "rock" || playerMove === "scissors" && cpuMove === "paper") {
-        console.log(`${playerMove} beats ${cpuMove}, You Won!`);
+        return `${playerMove} beats ${cpuMove}, You Won!`
     } else if (playerMove === "rock" && cpuMove === "rock" || playerMove === "paper" && cpuMove === "paper" || playerMove === "scissors" && cpuMove === "scissors") { 
-        console.log(`It's a tie!`);
+        return `It's a tie!`
     }
 }
 
