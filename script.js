@@ -11,7 +11,7 @@ function getComputerMove() {
 }
 
 function getUserMove() {
-    userMove = prompt("Do you want to play a game of Rock, Paper, Scissors?... Yes?, That's the spirit, Now, Choose Rock, Paper or Scissors!");
+    userMove = prompt("Do you want to play a game of Rock, Paper, Scissors?... Yes?, That's the spirit, the best of 5 wins, Now, Choose Rock, Paper or Scissors!");
     userMove = userMove.toLowerCase()
     userMove = userMove.trim()
 
@@ -27,24 +27,52 @@ function getUserMove() {
 }
 
 
-function startGame() {
+function playRound() {
     let cpuMove = getComputerMove();
     let playerMove = getUserMove();
 
     if (!playerMove) {
-        return "I told you to choose 'Rock', 'Paper' or 'Scissors', please check if you made a typo"
+        console.log("I told you to choose 'Rock', 'Paper' or 'Scissors', please check if you made a typo")
+        return false
     }
 
     console.log(`You chose ${playerMove}`);
     console.log(`I chose ${cpuMove}`);
 
     if (playerMove === "rock" && cpuMove === "paper" || playerMove === "paper" && cpuMove === "scissors" || playerMove === "scissors" && cpuMove === "rock") {    
-        return `${cpuMove} beats ${playerMove}, You Lost...`
+        console.log(`${cpuMove} beats ${playerMove}, You Lost this round...`)
+        return "cpu"
     } else if (playerMove === "rock" && cpuMove === "scissors" || playerMove === "paper" && cpuMove === "rock" || playerMove === "scissors" && cpuMove === "paper") {
-        return `${playerMove} beats ${cpuMove}, You Won!`
+        console.log(`${playerMove} beats ${cpuMove}, You Win this round!`)
+        return "player"
     } else if (playerMove === "rock" && cpuMove === "rock" || playerMove === "paper" && cpuMove === "paper" || playerMove === "scissors" && cpuMove === "scissors") { 
-        return `It's a tie!`
+        console.log("It's a tie");
+        return false
     }
 }
 
-console.log(startGame())
+function startGame() {
+    let playerScore = 0
+    let cpuScore = 0
+    let roundWinner = ""
+
+    while (true) {
+        roundWinner = playRound();
+
+        if (roundWinner === "player") {
+            playerScore += 1;
+        } else if (roundWinner === "cpu") {
+            cpuScore += 1;
+        }
+
+        console.log(`Your score is ${playerScore}, My score is ${cpuScore}`);
+
+        if (playerScore === 3) {
+            return "You Won the game!"
+        } else if (cpuScore === 3) {
+            return "You Lost the game..."
+        }
+    }
+}
+
+console.log(startGame());
