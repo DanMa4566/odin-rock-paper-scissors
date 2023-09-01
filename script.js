@@ -4,6 +4,7 @@ const paraCpu = document.querySelector(".move-cpu");
 const paraWinner = document.querySelector(".round-winner");
 const paraPlayerScore = document.querySelector(".score-player");
 const paraCpuScore = document.querySelector(".score-cpu");
+const paraGameWinner = document.querySelector(".game-winner")
 const buttons = document.querySelectorAll('button');
 
 
@@ -32,6 +33,25 @@ function playRound(playerM) {
     let cpuMove = getComputerMove();
     let playerMove = playerM;
 
+    if (playerMove === "restart") {
+        
+        playerScore = 0
+        cpuScore = 0
+        paraCpuScore.textContent = `CPU: ${cpuScore}`
+        paraPlayerScore.textContent = `Player ${playerScore}`
+        paraWinner.textContent = ""
+        paraCpu.textContent = ""
+        paraPlayer.textContent = ""
+        paraGameWinner.textContent = ""
+
+        return false
+    }
+
+    // prevents the player from playing another round after they lost / won
+    if (playerScore >= 5 || cpuScore >= 5) {
+        return false
+    }
+
     paraCpu.textContent = `CPU chose ${cpuMove}`
     paraPlayer.textContent = `You chose ${playerMove}`
 
@@ -48,4 +68,10 @@ function playRound(playerM) {
 
     paraCpuScore.textContent = `CPU: ${cpuScore}`
     paraPlayerScore.textContent = `Player: ${playerScore}`
+
+    if (playerScore >= 5) {
+        paraGameWinner.textContent = "Congratulations, You won the game!"
+    } else if (cpuScore >= 5) {
+        paraGameWinner.textContent = "You lost the game"
+    }
 }
