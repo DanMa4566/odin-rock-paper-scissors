@@ -1,4 +1,3 @@
-const roundResult = document.querySelector(".round-result");
 const paraPlayer = document.querySelector(".move-player");
 const paraCpu = document.querySelector(".move-cpu");
 const paraWinner = document.querySelector(".round-winner");
