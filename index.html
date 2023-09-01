@@ -11,28 +11,36 @@
     <h1>Rock Paper Scissors</h1>
 
     <div class="container">
-        <button class="option" id="rock">Rock</button>
-        <button class="option" id="paper">Paper</button>
-        <button class="option" id="scissors">Scissors</button>
-    </div>
+        <div class="button-container">
+            <button class="option" id="rock">Rock</button>
+            <button class="option" id="paper">Paper</button>
+            <button class="option" id="scissors">Scissors</button>
+        </div>
 
-    <div class="result-container">
-        <div class="score-container">
-            <div class="score-player"></div>
-            <div class="score-cpu"></div>
+        <div class="result-container">
+            <div class="score-container">
+                <div class="score-player">
+                    <p>Player</p>
+                    <p class="player"></p>
+                </div>
+                <div class="score-cpu">
+                    <p>CPU</p>
+                    <p class="cpu"></p>
+                </div>
+            </div>
+            <div class="round-result-container">
+                <p class="move-cpu"></p>
+                <p class="move-player"></p>
+                <p class="round-winner"></p>
+            </div>
+            <div class="final-result-container">
+                <p class="game-winner"></p>
+            </div>
         </div>
-        <div class="round-result">
-            <p class="move-cpu"></p>
-            <p class="move-player"></p>
-            <p class="round-winner"></p>
-        </div>
-        <div class="final-result">
-            <p class="game-winner"></p>
-        </div>
-    </div>
 
-    <div class="restart-container">
-        <button class="restart" id="restart">Restart game</button>
+        <div class="restart-container">
+            <button class="restart" id="restart">Restart game</button>
+        </div>
     </div>
 </body>
 </html>
