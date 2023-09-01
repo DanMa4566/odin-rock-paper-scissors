@@ -51,8 +51,8 @@ function playRound(playerM) {
         return false
     }
 
-    paraCpu.textContent = `CPU chose ${cpuMove}`
-    paraPlayer.textContent = `You chose ${playerMove}`
+    paraCpu.textContent = `CPU chose "${cpuMove}"`
+    paraPlayer.textContent = `You chose "${playerMove}"`
 
     // first if: checks all possible lose situations, second if: checks all possible win situations, third if: checks ties
     if (playerMove === "rock" && cpuMove === "paper" || playerMove === "paper" && cpuMove === "scissors" || playerMove === "scissors" && cpuMove === "rock") {    
