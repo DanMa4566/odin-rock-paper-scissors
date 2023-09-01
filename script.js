@@ -1,8 +1,8 @@
 const paraPlayer = document.querySelector(".move-player");
 const paraCpu = document.querySelector(".move-cpu");
 const paraWinner = document.querySelector(".round-winner");
-const paraPlayerScore = document.querySelector(".score-player");
-const paraCpuScore = document.querySelector(".score-cpu");
+const paraPlayerScore = document.querySelector(".player");
+const paraCpuScore = document.querySelector(".cpu");
 const paraGameWinner = document.querySelector(".game-winner")
 const buttons = document.querySelectorAll('button');
 
@@ -65,8 +65,8 @@ function playRound(playerM) {
         paraWinner.textContent = `It's a tie`
     }
 
-    paraCpuScore.textContent = `CPU: ${cpuScore}`
-    paraPlayerScore.textContent = `Player: ${playerScore}`
+    paraCpuScore.textContent = `${cpuScore}`
+    paraPlayerScore.textContent = `${playerScore}`
 
     if (playerScore >= 5) {
         paraGameWinner.textContent = "Congratulations, You won the game!"
