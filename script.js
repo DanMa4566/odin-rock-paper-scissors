@@ -36,8 +36,8 @@ function playRound(playerM) {
 
         playerScore = 0
         cpuScore = 0
-        paraCpuScore.textContent = `CPU: ${cpuScore}`
-        paraPlayerScore.textContent = `Player: ${playerScore}`
+        paraCpuScore.textContent = ""
+        paraPlayerScore.textContent = ""
         paraWinner.textContent = ""
         paraCpu.textContent = ""
         paraPlayer.textContent = ""
