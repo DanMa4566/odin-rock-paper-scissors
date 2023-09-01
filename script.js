@@ -34,11 +34,11 @@ function playRound(playerM) {
     let playerMove = playerM;
 
     if (playerMove === "restart") {
-        
+
         playerScore = 0
         cpuScore = 0
         paraCpuScore.textContent = `CPU: ${cpuScore}`
-        paraPlayerScore.textContent = `Player ${playerScore}`
+        paraPlayerScore.textContent = `Player: ${playerScore}`
         paraWinner.textContent = ""
         paraCpu.textContent = ""
         paraPlayer.textContent = ""
